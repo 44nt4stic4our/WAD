@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Data</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Stored Users</h2>
+
+    <ul id="list"></ul>
+</div>
+
+<script>
+let users = JSON.parse(localStorage.getItem("users")) || [];
+
+let output = "";
+
+users.forEach(user => {
+    output += `<li>${user.name} - ${user.email}</li>`;
+});
+
+document.getElementById("list").innerHTML = output;
+</script>
+
+</body>
+</html>
